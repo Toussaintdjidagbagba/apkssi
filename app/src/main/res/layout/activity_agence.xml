@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/page"
+    tools:context=".agence">
+
+    <LinearLayout
+        android:id="@+id/lin_progress"
+        android:visibility="visible"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:outlineAmbientShadowColor="@color/design_default_color_primary"
+            android:indeterminate="true">
+        </ProgressBar>
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/teal_200"
+                android:paddingVertical="5dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/icon_next"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:alpha="0.6"
+                    android:padding="5dp"
+                    android:clickable="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="6dp"
+                    android:src="@drawable/icon_next">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AGENCES SSI"
+                    android:textColor="@color/black"
+                    android:textAllCaps="true"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20dp">
+                </TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="5dp">
+                <EditText
+                    android:id="@+id/text_rechercher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Entrez un produit"
+                    android:textSize="18dp"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="7dp"
+                    android:layout_weight="1"
+                    android:inputType="text|textCapCharacters|textAutoComplete"
+                    android:background="@drawable/editext_case">
+                </EditText>
+                <Button
+                    android:id="@+id/btn_rechercher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:top="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Rechercher"
+                    android:textSize="13dp">
+                </Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"
+                android:alpha="0.07">
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_liste"
+                android:padding="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="wrap_content"
+        android:paddingLeft="20dp"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/add_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/teal_200"
+
+            android:paddingStart="10dp"
+            app:icon="@drawable/icon_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_quitter_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/teal_200"
+            android:paddingStart="10dp"
+            android:translationY="-60dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/add_fab"
+            app:layout_constraintEnd_toEndOf="@+id/add_fab"
+            app:srcCompat="@drawable/icon_quitter" />
+
+        <TextView
+            android:id="@+id/add_quitter_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="8dp"
+            android:paddingStart="70dp"
+            android:paddingTop="-20dp"
+            android:text="Quitter"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:translationY="-80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_quitter_fab"
+            app:layout_constraintEnd_toStartOf="@+id/add_quitter_fab"
+            app:layout_constraintTop_toTopOf="@+id/add_quitter_fab" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_rechercher_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/teal_200"
+            android:paddingStart="10dp"
+            android:translationY="-120dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/add_quitter_fab"
+            app:layout_constraintEnd_toEndOf="@+id/add_quitter_fab"
+            app:layout_constraintStart_toStartOf="@+id/add_quitter_fab"
+            app:srcCompat="@drawable/icon_rechercher" />
+
+        <TextView
+            android:id="@+id/add_rechercher_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="8dp"
+            android:paddingStart="70dp"
+            android:text="Rechercher Produit"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:translationY="-140dp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_rechercher_fab"
+            app:layout_constraintEnd_toStartOf="@+id/add_rechercher_fab"
+            app:layout_constraintTop_toTopOf="@+id/add_rechercher_fab" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_vente_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/teal_200"
+            android:paddingStart="10dp"
+            android:translationY="-180dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/add_rechercher_fab"
+            app:layout_constraintEnd_toEndOf="@+id/add_rechercher_fab"
+            app:layout_constraintStart_toStartOf="@+id/add_rechercher_fab"
+            app:srcCompat="@drawable/ic_vente" />
+
+        <TextView
+            android:id="@+id/add_vente_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="8dp"
+            android:paddingStart="70dp"
+            android:text="Point de vente"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:translationY="-200dp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_vente_fab"
+            app:layout_constraintEnd_toStartOf="@+id/add_vente_fab"
+            app:layout_constraintTop_toTopOf="@+id/add_vente_fab" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_agence_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/teal_200"
+            android:paddingStart="10dp"
+            android:translationY="-240dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/add_vente_fab"
+            app:layout_constraintEnd_toEndOf="@+id/add_vente_fab"
+            app:layout_constraintStart_toStartOf="@+id/add_vente_fab"
+            app:srcCompat="@drawable/icon_agence" />
+
+        <TextView
+            android:id="@+id/add_agence_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="8dp"
+            android:paddingStart="70dp"
+            android:text="Agence SSI"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:translationY="-260dp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_agence_fab"
+            app:layout_constraintEnd_toStartOf="@+id/add_agence_fab"
+            app:layout_constraintTop_toTopOf="@+id/add_agence_fab" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_site_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/teal_200"
+            android:paddingStart="10dp"
+            android:translationY="-300dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/add_agence_fab"
+            app:layout_constraintEnd_toEndOf="@+id/add_agence_fab"
+            app:layout_constraintStart_toStartOf="@+id/add_agence_fab"
+            app:srcCompat="@drawable/icon_site" />
+
+        <TextView
+            android:id="@+id/add_site_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="8dp"
+            android:paddingStart="70dp"
+            android:text="Site"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:translationY="-320dp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_site_fab"
+            app:layout_constraintEnd_toStartOf="@+id/add_site_fab"
+            app:layout_constraintTop_toTopOf="@+id/add_site_fab" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

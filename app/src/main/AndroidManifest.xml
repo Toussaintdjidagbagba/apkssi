@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="mdp.dste.lassi">
+
+    <uses-permission android:name="mdp.dste.lassi.permission.MAPS_RECEIVE" />
+    <permission
+        android:name="mdp.dste.lassi.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logoi"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logoi"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LASSI">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDwtTuhkhVT7KBVQuEUOOMhg2wTp-QXvbc" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".MapsAllVente"
+            android:exported="false" />
+        <activity
+            android:name=".MapsAllAgence"
+            android:exported="false" />
+
+
+
+        <activity
+            android:name=".detail_agence"
+            android:exported="false" />
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".agence"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

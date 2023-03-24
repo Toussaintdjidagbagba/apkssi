@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detail_agence">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/logo">
+                </ImageView>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:src="@drawable/gradient_detailagence"
+                    android:layout_gravity="bottom"
+                    android:layout_height="350dp">
+                </ImageView>
+                <TextView
+                    android:id="@+id/nom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textSize="22dp"
+                    android:textColor="#fff"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Nom de l'agence">
+                </TextView>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:translationY="8dp"
+                android:paddingLeft="20dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:text="Description">
+                </TextView>
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textSize="17dp"
+                    android:paddingVertical="5dp"
+                    android:layout_marginRight="10dp"
+                    android:text="grgugruthiutyiusawdvvhyttreqr4657tghguyii77623wsaxvjkjo9yjttiuthitkjkkkkkkkkkkkkkkkkkjjyjkhjgkhhghgdfjdtrryreutriyuitkjhgnbmvnbfnbfjgytrturytyktkhjgmbbnfjghug">
+                </TextView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:text="Téléphone">
+                </TextView>
+                <TextView
+                    android:id="@+id/telephone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+229 00 00 00 00"
+                    android:layout_marginTop="5dp"
+                    android:textSize="17dp">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:text="Adresse">
+                </TextView>
+                <TextView
+                    android:id="@+id/adresse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Akassato, Abomey-calavi, Benin">
+                </TextView>
+                <Button
+                    android:id="@+id/btn_maps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="S'y rendre"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18dp">
+                </Button>
+
+
+                <TextView
+                    android:id="@+id/longitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/latitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/idagence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
